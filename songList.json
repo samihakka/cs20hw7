@@ -1,8 +1,67 @@
-{
-    "person": {
-      "name": "Alice",
-      "country": "Austria",
-      "tasks": ["develop", "design", "test"],
-      "age": 30
+[{
+      "name": "Dark Times",
+      "artist": "The Weeknd",
+      "genre": ["R-and-B", "Soul"],
+      "yearReleased": 2015
+    }, {
+      "name": "Sharp Dressed Man",
+      "artist": "ZZ Top",
+      "genre": ["Hard Rock"],
+      "yearReleased": 1983
+    } , {
+      "name": "Runaway",
+      "artist": "Kanye West",
+      "genre": ["Hip-Hop", "Rap"],
+      "yearReleased": 2015
+    } , {
+      "name": "Novacane",
+      "artist": "Frank Ocean",
+      "genre": ["Alternative"],
+      "yearReleased": 2015
+    } , {
+      "name": "Slick Talk",
+      "artist": "JID",
+      "genre": ["Hip-Hop", "Rap"],
+      "yearReleased": 2018
+    } , {
+      "name": "Jet Fuel",
+      "artist": "Mac Miller",
+      "genre": ["Hip-Hop", "Rap"],
+      "yearReleased": 2018
+    } , {
+      "name": "Evil Woman",
+      "artist": "Electric Light Orchestra",
+      "genre": ["Rock"],
+      "yearReleased": 1975
+    } , {
+      "name": "Limelight",
+      "artist": "Rush",
+      "genre": ["Hard Rock"],
+      "yearReleased": 1981
+    } , {
+      "name": "Borderline",
+      "artist": "Tame Impala",
+      "genre": ["Alternative"],
+      "yearReleased": 2020
+    } , {
+      "name": "Just a Feeling",
+      "artist": "Phantoms",
+      "genre": ["Electronic"],
+      "yearReleased": 2017
+    } , {
+      "name": "Misty Mountain Top",
+      "artist": "Led Zeppelin",
+      "genre": ["Rock"],
+      "yearReleased": 1971
+    } , {
+      "name": "Heatin Up",
+      "artist": "Lil Baby",
+      "genre": ["Hip-Hop", "Rap"],
+      "yearReleased": 2020
+    } , {
+      "name": "Cold as You",
+      "artist": "Luke Combs",
+      "genre": ["Country"],
+      "yearReleased": 2020
     }
-  }
+  ]
