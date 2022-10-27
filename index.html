@@ -3,23 +3,114 @@
   <head>
     <meta charset="UTF-8" />
     <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
 
   <body>
+
     <script language="javascript">
-      $.get( "https://samihakka.github.io/cs20hw7/songList.json", 
+
+
+      function spenny(init) {
+
+      if (typeof init != "number") {
+        var value = this.value;
+      }
+      else {
+        var value = "Filter";
+      }
+
+
+      if (value == "Filter") {
+          $.get( "https://samihakka.github.io/cs20hw7/songList.json", 
+          function( data ) {
+          str = JSON.stringify(data);
+        strHTML= "<ul>";
+
+        data.forEach(function(song) { 
+          strHTML += "<li>" 
+              + song.name + "<br>"
+              + "Artist: " + song.artist + "<br>"
+              + "Genre: " + song.genre + "<br>"
+              + "Released " + song.yearReleased + "<br>" + "<br>" +
+            "</li>";
+          }) 
+      strHTML += "</ul>";
+      
+      document.getElementById("writeSongs").innerHTML = strHTML;
+      })}
+      else {
+
+
+        $.get( "https://samihakka.github.io/cs20hw7/songList.json", 
+          function( data ) {
+            
+          str = JSON.stringify(data);
+          strHTML= "<ul>";
+          
+
+        data.forEach(function(song) { 
+
+          for (i in song.genre) {
+
+            if (song.genre[i] == value) {
+
+            strHTML += "<li>" 
+            + song.name + "</li>";
+
+            }
+          }}) 
+      strHTML += "</ul>";
+      
+      document.getElementById("writeSongs").innerHTML = strHTML;
+
+      })}}
+
+      function rawString() {
+        $.get( "https://samihakka.github.io/cs20hw7/songList.json", 
           function( data ) {
           str = JSON.stringify(data);
           document.write(str +"<br/>");
+          
         strHTML= "<ul>";
-        data.forEach(function(song) { 
-        strHTML += "<li>" 
-              + song.name + " : " 
-            + song.artist + "</li>";
-          }) 
-      strHTML += "</ul>";
-      document.write (strHTML);
-      })
+          document.write("<br/>Refresh page to go back");
+      }
+      )
+    }
+
+      $(document).ready(function() {
+
+        spenny(1);
+
+        $('#genre_options select').change(spenny);
+        $("input:button").click(rawString);
+
+      });
+
+
     </script>
+
+<input type = "button" value = "Show Raw String"/>
+
+<br><br>
+
+<div id="genre_options">
+    <select name="genre" id="songs" size="1">
+        <option value="Filter" selected>Filter</option>;
+        <option value="Alternative">Alternative</option>;
+        <option value="Country">Country</option>;
+        <option value="Electronic">Electronic</option>;
+        <option value="Hip-Hop">Hip-Hop</option>;
+        <option value="Hard Rock">Hard Rock</option>;
+        <option value="Rap">Rap</option>;
+        <option value="R-and-B">R-and-B</option>;
+        <option value="Rock">Rock</option>;
+        <option value="Soul">Soul</option>;
+    </select>
+  </div>
+
+
+<p id="writeSongs"></p>
+
   </body>
 </html>
